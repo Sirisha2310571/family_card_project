@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Family Card Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Family Card Application</h1>
+    <p>Apply online and track your approval status</p>
+
+    <form method="POST" action="/submit" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="aadhaar">Aadhaar Card (PDF/Image):</label>
+            <input type="file" id="aadhaar" name="aadhaar" accept=".pdf,.png,.jpg,.jpeg" required>
+        </div>
+
+        <button type="submit">Submit Application</button>
+    </form>
+
+</body>
+</html>
