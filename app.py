@@ -73,6 +73,7 @@ def apply():
         return redirect('/login')
 
     if request.method == 'POST':
+        card_type = request.form['card_type']
         aadhaar = request.files['aadhaar']
         pan = request.files['pan']
         income = request.files['income']
@@ -89,6 +90,8 @@ def apply():
 
         user_applied[username] = True
         return render_template('confirmation.html')
+    
+
 
     return render_template('apply.html')
 
